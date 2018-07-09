@@ -40,7 +40,9 @@ def register():
         	dep = input("Enter your Department : ")
         	c.execute("INSERT INTO empData VALUES (?,?,?,?,?,?)",(empID,eName,dep,aNum,phNum[0][0],add[0][0]))
         	print("Your Employee ID = {0}".format(empID))
-			break
+		que = "CREATE TABLE {0}{1} ( Date TEXT NOT NULL, inTime NUMERIC, outTime NUMERIC, inStamp INTEGER, outStamp INTEGER, Hours INTEGER, Minutes INTEGER )".format(eName,empID)
+        	c.execute(que)
+		break
     	else :
         	count=count+1
         	continue
